@@ -1,0 +1,168 @@
+{% extends 'home/base.html'%}
+{% load static %}
+
+<!-- Head -->
+{#{% block head %}#}
+{#    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>#}
+{#    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>#}
+{#{% endblock head %}#}
+
+<!-- Sidebar Menu -->
+{% block sidebar %}
+    {% include 'home/navbar.html' %}
+{% endblock sidebar%}
+
+
+<!-- Content -->
+{% block content %}
+    <div class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>About us</h2>
+                <div class="line-dec"></div>
+                <span>
+                    We offer wide range of services for all vehicle types. SEO rich text here.
+                </span>
+            </div>
+            <div class="left-image-post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="left-image">
+                        <img src="https://media.istockphoto.com/photos/feeling-nice-mechanic-holding-a-tire-at-the-repair-garage-replacement-picture-id1179950020?k=6&m=1179950020&s=170667a&w=0&h=4UmHBqLvWpoVfLGrkYsOu7NeDv8uteudMb_dEd_lycI=" alt="" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-text">
+                        <h4>Title</h4>
+                        <p>Description</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <p>
+                        {{ service.long_description }}
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                        ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                        Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
+                        eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+                        felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper
+                        nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+                        eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                        Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.
+                        Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+                        Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero,
+                        sit amet adipiscing sem neque sed ipsum.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>What our clients think?</h2>
+                <div class="line-dec"></div>
+                <span>
+                    We measure our success according to our customers' feedback.
+                </span>
+            </div>
+
+            <div id="testimonials" class="carousel slide d-flex justify-content-around align-items-center" data-ride="carousel">
+                <a class="carousel-control-prev col-1" href="#testimonials" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <div class="carousel-inner col-10 px-0">
+
+                    <div class="carousel-item active">
+                        <div class="row justify-content-around">
+                            <div class="col-9 d-flex">
+                                <div class="service-item border border-white text-center px-1">
+                                    <i class="far fa-smile-beam fa-5x pb-2 border-bottom"></i>
+                                    <h4>Кристиян Григоров</h4>
+                                    <p>Майстор Светльо работи честно, качествено и е точен като Швейцарски часовник.</p>
+                                    <p>Да е жив и здрав.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row justify-content-around">
+                            <div class="col-9 d-flex">
+                                <div class="service-item border border-white text-center px-1">
+                                    <i class="fas fa-thumbs-up fa-5x pb-2 border-bottom"></i>
+                                    <h4>Даниел Грозев</h4>
+                                    <p>Майстор Светльо работи честно, качествено и е точен като Швейцарски часовник.</p>
+                                    <p>Да е жив и здрав.</p>
+                                    <p>Яхти и джетове да има.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row justify-content-around">
+                            <div class="col-9 d-flex">
+                                <div class="service-item border border-white text-center px-1">
+                                    <i class="far fa-calendar-check fa-5x pb-2 border-bottom"></i>
+                                    <h4>Райна Василева</h4>
+                                    <p>Майстор Светльо работи честно, качествено и е точен като Швейцарски часовник.</p>
+                                    <p>Да е жив и здрав.</p>
+                                    <p>Яхти и джетове да има.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row justify-content-around">
+                            <div class="col-9 d-flex">
+                                <div class="service-item border border-white text-center px-1">
+                                    <i class="fas fa-user-plus fa-5x pb-2 border-bottom"></i>
+                                    <h4>Бенджи Георгиев</h4>
+                                    <p>Майстор Светльо работи честно, качествено и е точен като Швейцарски часовник.</p>
+                                    <p>Да е жив и здрав.</p>
+                                    <p>Яхти и джетове да има.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row justify-content-around">
+                            <div class="col-9 d-flex">
+                                <div class="service-item border border-white text-center px-1">
+                                    <i class="fas fa-medal fa-5x pb-2 border-bottom border-bottom"></i>
+                                    <h4>Петър Стаматев</h4>
+                                    <p>Майстор Светльо работи честно, качествено и е точен като Швейцарски часовник.</p>
+                                    <p>Да е жив и здрав.</p>
+                                    <p>Много турбо и висок октан.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <a class="carousel-control-next col-1" href="#testimonials" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+
+<!-- Footer -->
+{% block footer %}
+    {% include 'home/footer.html' %}
+{% endblock footer %}
+
+

@@ -1,0 +1,56 @@
+{%  extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block head %}
+    {% load bootstrap4 %}       {# import bootstrap4/bootstrap3 #}
+    {% bootstrap_css %}         {# Embed Bootstrap CSS #}
+    {% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+    {{ form.media }}            {# Adds date-picker required JS and CSS #}
+{% endblock head %}
+
+{% block sidebar %}
+    {% include 'home/navbar.html' %}
+{% endblock sidebar%}
+
+{% block content %}
+
+    <div class="section">
+        <div class="section-heading">
+            <h2>Find your booking</h2>
+            <div class="line-dec"></div>
+            <div>We sent to your email address a confirmation email with your Booking ID along with all the details.</div>
+            <div>Fill in the form that unique identifier and hit Search button. You will be redirected to your booking.</div>
+            <div>In case you cannot find your booking confirmation, please contact us on the phone number below</div>
+        </div>
+                {% if messages %}
+            <div class="row justify-content-center messages">
+                {% for message in messages %}
+                    <div class="error-message justify-content-center">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="row justify-content-center">
+            <form method="GET">
+                <div class="service-item d-flex justify-content-between align-items-center flex-wrap">
+                    <div class="col-12 col-md-4 text-center">
+                         <i class="fas fa-search fa-5x"></i>
+                    </div>
+                    <div class="col-12 col-md-4 my-4">
+                        {{ form.booking_id|as_crispy_field }}
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <button class="search-button" type="submit">Search</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    {% include 'home/footer.html' %}
+{% endblock footer %}

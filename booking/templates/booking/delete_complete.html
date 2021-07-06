@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %}
+
+{% block sidebar %}
+    {% include 'home/navbar.html' %}
+{% endblock sidebar%}
+
+{% block content %}
+<div class="service-item d-flex justify-content-between align-items-center flex-wrap">
+    <div class="col-12 col-md-2 text-center">
+         <i class="fas fa-calendar-times fa-5x"></i>
+    </div>
+    <div class="col-12 col-md-8 my-4 text-center">
+        Your appointment has been cancelled successfully! Click the button below to go back to homepage.
+    </div>
+    <div class="col-12 col-md-2 text-center">
+       <button class="delete-button">
+           <a href="{% url 'home' %}">Okay</a>
+       </button>
+    </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+    {% include 'home/footer.html' %}
+{% endblock footer %}

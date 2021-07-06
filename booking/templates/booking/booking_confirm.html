@@ -1,0 +1,41 @@
+{%  extends 'home/base.html' %}
+{% load static %}
+
+{% block sidebar %}
+    {% include 'home/navbar.html' %}
+{% endblock sidebar%}
+
+{% block content %}
+
+    <div class="section">
+        <div class="section-heading">
+            <h2>Success!</h2>
+            <div class="line-dec"></div>
+            <div>You have successfuly booked your appointment with CarMechanic!</div>
+            <div>You can reschedule or cancel your appointment anytime through our website.</div>
+            <div>Thank you for choosing us!</div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="service-item d-flex justify-content-between align-items-center flex-wrap">
+                <div class="col-12 col-md-2 text-center">
+                     <i class="fas fa-calendar-check fa-5x"></i>
+                </div>
+                <div class="col-12 col-md-8">
+                    <p>Booking completed!</p>
+                    <p>We have sent a confirmation email to the address you filled in.</p>
+                </div>
+                <div class="col-12 col-md-2 text-center">
+                    <form>
+                        <button formaction="{% url 'home' %}" type="submit">Home</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    {% include 'home/footer.html' %}
+{% endblock footer %}

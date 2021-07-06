@@ -1,0 +1,72 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+<!-- Sidebar Menu -->
+{% block sidebar %}
+    {% include 'home/navbar.html' %}
+{% endblock sidebar%}
+
+
+<!-- Content -->
+{% block content %}
+    <div class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our services</h2>
+                <div class="line-dec"></div>
+                <span>
+                    We offer wide range of services for all vehicle types. SEO rich text here.
+                </span>
+            </div>
+
+                    {% for service in object_list %}
+                        {% if forloop.counter|divisibleby:"2" %}
+                            <div class="right-image-post">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="left-text">
+                                      <h4>{{ service.title }}</h4>
+                                      <p>{{ service.short_description }}</p>
+                                      <div class="white-button">
+                                        <a href={% url 'service-detail' service.name %}>Read more</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="right-image">
+                                      <img src={{ service.image.url }} alt="" />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        {% else %}
+                            <div class="left-image-post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="left-image">
+                                            <img src={{ service.image.url }} alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="right-text">
+                                            <h4>{{ service.title }}</h4>
+                                            <p>{{ service.short_description }}</p>
+                                            <div class="white-button">
+                                                <a href={% url 'service-detail' service.name %}>Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {%  endfor %}
+        </div>
+    </div>
+{% endblock content %}
+
+
+
+<!-- Footer -->
+{% block footer %}
+    {% include 'home/footer.html' %}
+{% endblock footer %}
